@@ -182,6 +182,10 @@ body, header, footer {
     line-height: 1.5;
 }
 
+.hashtag {
+    list-style-type: circle;
+}
+
 /* Main */
 .row {
     display: flex;
