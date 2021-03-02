@@ -16,6 +16,10 @@
     src: url(fonts/Helvetica.tcc);
 }
 
+html {
+    font-family: Epilogue;
+}
+
 body, header, footer {
     margin: 0 0;
 }
@@ -33,7 +37,7 @@ body, header, footer {
     border-bottom: 2px solid #9fb1fe;
 }
 
-.header_inner {
+.header-inner {
     display: flex;
     justify-content: space-between;
     margin: 25px 0;
@@ -43,27 +47,24 @@ body, header, footer {
     font-size: 400%;
     font-weight: bold;
     color: #9fb1fe;
-    font-family: Epilogue;
     margin-left: 40px;
 }
 
-.user_name {
+.user-name {
     display: inline-block;
     margin-right: 10px;
     font-size: 20px;
     font-weight: bold;
     color: #9fb1fe;
-    font-family: Epilogue;
 }
 
-.header_button {
+.header-button {
     display: inline-block;
     margin-left: 10px;
     margin-right: 40px;
     font-size: 20px;
     font-weight: bold;
     color: white;
-    font-family: Epilogue;
     text-align: center;
     background-color: #9fb1fe;
     border: none;
@@ -73,7 +74,7 @@ body, header, footer {
 
 /* Add Ad */
 
-.add_ad {
+.add-ad {
     width: 100%;
     display: block;
     height: 200px;
@@ -81,31 +82,29 @@ body, header, footer {
     background-size: cover;
 }
     
-.add_ad_inner {
+.add-ad-inner {
     display: flex;
     justify-content: space-between;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.add_ad_button {
+.add-ad-button {
     font-size: 40px;
     font-weight: bold;
     color: #9fb1fe;
-    font-family: Epilogue;
     text-align: center;
     background-color: white;
     border: 1px solid #9fb1fe;
     border-radius: 42px;
-  	padding: 35px 60px;
+    padding: 35px 60px;
     margin-top: 36px;
 }
 
-.ad_text {
+.ad-text {
     font-size: 60px;
     font-weight: bold;
     color: white;
-    font-family: Epilogue;
     margin-top: 65px;
     margin-right: 140px;
 }
@@ -119,26 +118,25 @@ body, header, footer {
     border-bottom: 2px solid #9fb1fe;
 }
 
-.date_filter {
+.date-filter {
     display: block;
     width: 25%;
     height: 250px;
 }
 
-.hashtags_filter {
+.hashtags-filter {
     display: block;
     width: 50%;
     height: 250px;
 }
 
-.vendor_filter {
+.vendor-filter {
     display: block;
     width: 25%;
     height: 250px;
 }
 
-.filter_title {
-    font-family: Epilogue;
+.filter-title {
     font-size: 45px;
     color: #9fb1fe;
     text-align: center;
@@ -147,12 +145,11 @@ body, header, footer {
     font-weight: bold;
 }
 
-.calendar_block {
+.calendar-block {
     display: flex;
     justify-content: space-between;
     margin: 0 85px;
     height: 65px;
-    font-family: Epilogue;
     font-size: 30px;
     color: #9fb1fe;
     font-weight: bold;
@@ -160,7 +157,6 @@ body, header, footer {
 
 .calendar {
     color: #e1e6ff;
-    font-family: Epilogue;
     font-size: 15px;
     border: 1px solid #9fb1fe;
     margin-bottom: 20px;
@@ -168,22 +164,20 @@ body, header, footer {
     font-weight: normal;
 }
 
-.select_vendor_button {
+.select-vendor-button {
     padding: 25px 80px;
     color: #e1e6ff;
-    font-family: Epilogue;
     font-size: 20px;
     border: 1px solid #9fb1fe;
     margin-left: 70px;
     margin-top: 10px;
 }
 
-.hashtags_blocks {
+.hashtags-blocks {
     display: flex;
     justify-content: space-between;
     margin: 0 30px;
     color: #9fb1fe;
-    font-family: Epilogue;
     font-size: 30px;
     line-height: 1.5;
 }
@@ -195,19 +189,18 @@ body, header, footer {
     width: 100%;
 }
 
-.left_add {
+.left-ad {
     display: block;
     width: 50%;
     border-right: 2px solid #9fb1fe;
 }
 
-.right_add {
+.right-ad {
     display: block;
     width: 50%;
 }
 
-.ad_title {
-    font-family: Epilogue;
+.ad-title {
     font-size: 45px;
     color: #9fb1fe;
     text-align: center;
@@ -216,12 +209,12 @@ body, header, footer {
     font-weight: bold;
 }
 
-.ad_info {
+.ad-info {
     display: flex;
     justify-content: space-between;
 }
 
-.pic_container {
+.pic-container {
     direction: block;
     width: 200px;
     height: 200px;
@@ -229,7 +222,7 @@ body, header, footer {
     margin-left: 30px;
 }
 
-.title_buttons {
+.title-buttons {
     display: flex;
     justify-content: center;
 }
@@ -238,7 +231,7 @@ body, header, footer {
     margin-right: 40px;
 }
 
-.description_container {
+.description-container {
     display: block;
     height: 80px;
     width: 300px;
@@ -253,9 +246,8 @@ body, header, footer {
     font-size: 24px;
 }
 
-.discount_container {
+.discount-container {
     text-align: center;
-    font-family: Epilogue;
     font-weight: bold;
     font-size: 36px;
     color: #7c95ff;
@@ -273,7 +265,6 @@ body, header, footer {
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 10px;
-    font-family: Epilogue;
     font-weight: bold;
     font-size: 18px;
     color: #687bff;
@@ -284,7 +275,6 @@ body, header, footer {
     border-top: 2px solid #9fb1fe;
     border-bottom: 2px solid #9fb1fe;
     text-align: center;
-    font-family: Epilogue;
     font-weight: bold;
     font-size: 48px;
     color: #7c95ff;
@@ -301,39 +291,33 @@ body, header, footer {
     text-align: left; 
 }
 
-.no_review {
-    display: block;
-    height: 75px;
-    border-top: 2px solid #9fb1fe;
-    color: #9fb1fe;
-    font-size: 23px;
-    font-family: Helvetica;
+.review.no-review {
+    border-top: none;
     text-align: center; 
+    font-size: 100%;
 }
 
-.username_date {
+.username-date {
     display: flex;
     justify-content: space-between;
     margin: 0 20px;
     color: #687bff;
     font-size: 18px;
-    font-family: Epilogue;
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 10px;
 }
 
-.button_review {
+.button-review {
     display: flex;
     justify-content: space-between;
     margin: 0 20px;
 }
 
-.leave_review {
+.leave-review {
     font-size: 15px;
     font-weight: bold;
     color: white;
-    font-family: Epilogue;
     text-align: center;
     background-color: #9fb1fe;
     border: none;
@@ -346,11 +330,10 @@ body, header, footer {
     color: #c67cff;
 }
 
-.load_more {
+.load-more {
     font-size: 30px;
     font-weight: bold;
     color: white;
-    font-family: Epilogue;
     text-align: center;
     background-color: #9fb1fe;
     border: none;
@@ -367,7 +350,6 @@ body, header, footer {
     width: 100%;
     height: 190px;
     color: white;
-    font-family: Epilogue;
     font-weight: bold;
 }
 
@@ -382,6 +364,6 @@ body, header, footer {
     font-size: 20px; 
 }
 
-.email_footer {
+.email-footer {
     color: white;
 }	
