@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "b6e5bda9-3be5-4806-bc19-566db422ec74",
+		"name": "Recipe Puppy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1st request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.recipepuppy.com/api/?i=cheese,garlic",
+					"protocol": "http",
+					"host": [
+						"www",
+						"recipepuppy",
+						"com"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "i",
+							"value": "cheese,garlic"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2nd request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.recipepuppy.com/api/?q=pasta",
+					"protocol": "http",
+					"host": [
+						"www",
+						"recipepuppy",
+						"com"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "pasta"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3rd request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.recipepuppy.com/api/?i=chocolate&q=cake&p=3",
+					"protocol": "http",
+					"host": [
+						"www",
+						"recipepuppy",
+						"com"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "i",
+							"value": "chocolate"
+						},
+						{
+							"key": "q",
+							"value": "cake"
+						},
+						{
+							"key": "p",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

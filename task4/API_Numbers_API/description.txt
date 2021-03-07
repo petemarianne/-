@@ -1,0 +1,11 @@
+1st request
+I requested an interesting fact about a random number int the inclusive range [7;23]
+I got a number and a fun fact about it
+
+2nd request
+I requested an interesting fact about a certain date (11/10)
+I got the fact about the date
+
+3rd request
+I requested an interesting fact about a random year
+I got what I requested

@@ -1,0 +1,11 @@
+1st request
+I requested information about the weather on Mars.
+I got the data for the last 7 days.
+
+2nd request
+I requested image data gathered by NASA's Curiosity, Opportunity, and Spirit rovers on Mars
+I got 2 images with some information about them (camera, date, rover)
+
+3rd request
+I requested the picture of the day
+I got the link to the picture and some other information (date, explanation, title)

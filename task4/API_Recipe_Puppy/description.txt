@@ -1,0 +1,11 @@
+1st request
+I requested recipes including cheese and garlic
+I got 10 dishes (their titles, links to the recipes, ingredients and picture)
+
+2nd request
+I requested some pasta recipes
+I got 10 pasta recipes (their titles, links to the recipes, ingredients and picture)
+
+3rd request
+I requested cake recipes that include chocolate on the 3rd page
+I got 10 pasta recipes (their titles, links to the recipes, ingredients and picture)
