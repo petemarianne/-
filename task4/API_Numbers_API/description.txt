@@ -1,0 +1,11 @@
+1st request
+I requested an interesting fact about a random number between 7 and 23
+I got the fact about number 15
+
+2nd request
+I requested an interesting fact about day 11/10
+I got the fact about the day
+
+3rd request
+I requested an interesting fact about a random year
+I got the fact about 834 year
