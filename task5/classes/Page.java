@@ -7,8 +7,10 @@ import java.io.IOException;
 
 @WebServlet("/page")
 public class Page extends HttpServlet {
+    private static final String STARTING_PAGE_ADDRESS = "/WEB-INF/page.html";
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("/WEB-INF/page.html").forward(request, response);
+        request.getRequestDispatcher(STARTING_PAGE_ADDRESS).forward(request, response);
     }
 }

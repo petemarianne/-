@@ -9,7 +9,7 @@ public class Name extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");
-        if (name.length()>100){
+        if (name.length() > 100){
             throw new IOException("Name is larger than 100 symbols!");
         }
         response.getWriter().write("Name is " + name);

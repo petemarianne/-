@@ -6,8 +6,10 @@ import java.io.IOException;
 
 @WebServlet("/status")
 public class Status extends HttpServlet {
+    private static final String OUTPUT = "<p style='color:red'>Application Is Running</p>";
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.getWriter().write("<p style='color:red'>Application Is Running</p>");
+        response.getWriter().write(OUTPUT);
     }
 }

@@ -21,7 +21,7 @@ public class MyFilter implements Filter{
         String method = httpRequest.getMethod();
         String url = String.valueOf(httpRequest.getRequestURL());
 
-        System.out.println("\n" + method + " - " + url + " - " + (end - start) + "ms");
+        System.out.printf("Method: %s, url: %s, duration: %dms%n", method, url, end - start);
     }
 
     @Override
