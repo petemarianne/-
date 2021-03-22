@@ -403,6 +403,10 @@
 
     ];
 
+    function comparator (first, second) {
+        return second.createdAt.getTime() - first.createdAt.getTime();
+    }
+
     function getAds(skip = 0, top = 10, filterConfig = undefined) {
         if (typeof skip !== 'number' || typeof top !== 'number') {
             console.log('Incorrect inputting type');
@@ -410,7 +414,7 @@
         }
 
         if (filterConfig) {
-            let returningAds;
+            var returningAds;
             for (var param in filterConfig) {
                 if (param === 'hashTags') {
                     for (var i = 0; i < filterConfig.hashTags.length; i++) {
@@ -425,32 +429,15 @@
                 }
             }
 
-            returningAds.sort(function (first, second) {
-                if (first.createdAt < second.createdAt) {
-                    return 1;
-                } else if (first.createdAt > second.createdAt) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            });
+            returningAds.sort(comparator);
 
             return returningAds.slice(skip, skip + top);
-        } else {
-            var returningAds = adList.slice(skip, skip + top);
+        } 
+        var returningAds = adList.slice(skip, skip + top);
 
-            returningAds.sort(function (first, second) {
-                if (first.createdAt < second.createdAt) {
-                    return 1;
-                } else if (first.createdAt > second.createdAt) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            });
+        returningAds.sort(comparator);
 
-            return returningAds;
-        }
+        return returningAds;
     }
 
     function getAd(id) {
@@ -491,10 +478,8 @@
                     }
                     break;
                 case 'photoLink':
-                    if (adItem.photoLink){
-                        if (typeof adItem.photoLink !== 'string'){
-                            return false;
-                        }
+                    if (adItem.photoLink && typeof adItem.photoLink !== 'string'){
+                        return false;
                     }
                     break;
                 case 'hashTags':
@@ -513,13 +498,14 @@
                     }
                     break;
                 case 'rating':
-                    if (adItem.rating) {
-                        if (typeof adItem.rating !== 'number' || (adItem.rating < 0 && adItem.rating > 5)) {
-                            return false;
-                        }
+                    if (adItem.rating && (typeof adItem.rating !== 'number' || (adItem.rating < 0 && adItem.rating > 5))) {
+                        return false;
                     }
                     break;
                 case 'reviews':
+                    if (adItem.reviews && (typeof adItem.reviews.reviewText !== 'string' || typeof adItem.reviews.username !== 'string' || Object.prototype.toString.call(adItem.reviews.date) !== '[object Date]')) {
+                        return false;
+                    }
                     break;
                 default:
                     return false;
@@ -538,7 +524,7 @@
 
     function editAd(id, adItem){
         for (var param in adItem){
-            if (param === 'id' || param === 'createdAt' || param === 'vendor'){
+            if ('id' in adItem || 'createdAt' in adItem || 'vendor' in adItem) {
                 console.log('You can\'t change id, vendor or created time');
                 return false;
             }
@@ -557,19 +543,18 @@
     }
 
     function removeAd(id){
-        if (typeof id === 'string'){
-            var index = adList.findIndex(adItem => adItem.id === id);
-
-            if (index !== -1){
-                adList.splice(index, 1);
-                return true;
-            }
-
-            if (index === -1){
-             console.log('Incorrect id!')
-            }
+        if (typeof id !== 'string') {
+            return false;
         }
-        return false;
+        
+        var index = adList.findIndex(adItem => adItem.id === id);
+        if (index === -1){
+              console.log('Incorrect id!');
+              return false;
+        }
+        
+        adList.splice(index, 1);
+        return true;
     }
 
     //methods tests
@@ -595,7 +580,7 @@
     console.log(getAd('22'));
 
     console.log('Validate ad:');
-    console.log(validateAd({id: '2', createdAt: new Date(),  description: 'description', vendor: 'vendor', hashTags: ['hashtag'], discount: '20%', validUntil: new Date(), link: 'link'}));
+    console.log(validateAd({id: '2', createdAt: new Date(),  description: 'description', vendor: 'vendor', hashTags: ['hashtag'], discount: '20%', validUntil: new Date(), link: 'link', photoLink: 'photoLink'}));
 
     console.log('Invalid ad (without vendor):');
     console.log(validateAd({id: '44', createdAt: new Date(),  description: 'description', photoLink: 'photoLink'}));
