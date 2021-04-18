@@ -174,33 +174,29 @@ body, header, footer {
 
 .hashtags-blocks {
     display: flex;
-    justify-content: space-between;
-    margin: 0 30px;
-    color: #9fb1fe;
-    font-size: 30px;
-    line-height: 1.5;
+    justify-content: center;
 }
 
-.hashtag {
-    list-style-type: circle;
+.hashtag-area {
+    background-color: white;
+    resize: none;
+    border: 1px solid #9fb1fe;
+    width: 400px;
+    height: 100px;
 }
 
 /* Main */
-.row {
+.ad-block {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
+    border-bottom: 2px solid #9fb1fe;
 }
 
-.left-ad {
+.ad {
     display: block;
-    width: 50%;
+    width: 70%;
     border-right: 2px solid #9fb1fe;
-}
-
-.right-ad {
-    display: block;
-    width: 50%;
 }
 
 .ad-title {
@@ -234,6 +230,19 @@ body, header, footer {
     margin-right: 40px;
 }
 
+.edit-button {
+    width: 50px;
+    height: 50px;
+    border: white;
+    background-color: white;
+}
+.delete-button {
+    width: 50px;
+    height: 50px;
+    border: white;
+    background-color: white;
+}
+
 .description-container {
     display: block;
     height: 80px;
@@ -258,14 +267,14 @@ body, header, footer {
     margin-right: 20px;
 }
 
-.discount {
+.discount-amount {
     font-size: 100px;
     color: #c67cff;
     margin: 10px;
 }
 
 .hashtags {
-    margin-top: 20px;
+    margin-top: 60px;
     margin-left: 20px;
     margin-bottom: 10px;
     font-weight: bold;
@@ -275,46 +284,69 @@ body, header, footer {
 
 .reviews {
     display: block;
-    border-top: 2px solid #9fb1fe;
-    border-bottom: 2px solid #9fb1fe;
     text-align: center;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 36px;
     color: #7c95ff;
-    height: 500px;
+    height: 400px;
 }
 
-.review {
+.review-1 {
     display: block;
-    height: 75px;
-    border-top: 2px solid #9fb1fe;
-    color: #9fb1fe;
+    height: 60px;
     font-size: 23px;
     font-family: Helvetica;
     text-align: left; 
+    border-top: 1px solid #9fb1fe;
 }
 
-.review.no-review {
-    border-top: none;
-    text-align: center; 
-    font-size: 100%;
+.review-2 {
+    display: block;
+    height: 60px;
+    font-size: 23px;
+    font-family: Helvetica;
+    text-align: left; 
+    border-top: 1px solid #9fb1fe;
+}
+
+.review-3 {
+    display: block;
+    height: 60px;
+    font-size: 23px;
+    font-family: Helvetica;
+    text-align: left; 
+    border-top: 1px solid #9fb1fe;
+}
+
+.review-4 {
+    display: block;
+    height: 60px;
+    font-size: 23px;
+    font-family: Helvetica;
+    text-align: left; 
+    border-top: 1px solid #9fb1fe;
+}
+
+.review-5 {
+    display: block;
+    height: 60px;
+    font-size: 23px;
+    font-family: Helvetica;
+    text-align: left; 
+    border-top: 1px solid #9fb1fe;
 }
 
 .username-date {
     display: flex;
     justify-content: space-between;
-    margin: 0 20px;
-    color: #687bff;
+    color: #9fb1fe;
     font-size: 18px;
-    font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 10px;
 }
 
 .button-review {
     display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
+    justify-content: space-around;
+    margin: 0 50px;
 }
 
 .leave-review {
@@ -325,7 +357,7 @@ body, header, footer {
     background-color: #9fb1fe;
     border: none;
     border-radius: 42px;
-  	padding: 15px 20px;
+  	padding: 5px 20px;
     
 }
 

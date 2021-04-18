@@ -1,8 +1,8 @@
 class AdList {
-    _newAds = [];
+    _ads = [];
 
     constructor(ads) {
-        this._newAds = ads.concat();
+        this._ads = ads.concat();
     }
 
     static comparator (first, second) {
@@ -16,7 +16,7 @@ class AdList {
         }
 
         if (filterConfig) {
-            var returningAds = this._newAds;
+            var returningAds = this._ads;
 
             for (var param in filterConfig) {
                 if (param === 'hashTags') {
@@ -38,14 +38,14 @@ class AdList {
 
         }
             
-        var returningAds = this._newAds.slice(skip, skip + top);
+        var returningAds = this._ads.slice(skip, skip + top);
         returningAds.sort(AdList.comparator);
         return returningAds;
     }
 
     get(id) {
         if (typeof id === 'string') {
-            return this._newAds.find(adItem => adItem.id === id);
+            return this._ads.find(adItem => adItem.id === id);
         } else {
             console.log('Incorrect type of id. You should use "string"');
         }
@@ -118,7 +118,7 @@ class AdList {
 
     add(adItem) {
         if (AdList.validate(adItem)) {
-            this._newAds.push(adItem);
+            this._ads.push(adItem);
             return true;
         }
         return false;
@@ -149,13 +149,13 @@ class AdList {
             return false;
         }
         
-        var index = this._newAds.findIndex(adItem => adItem.id === id);
+        var index = this._ads.findIndex(adItem => adItem.id === id);
         if (index === -1){
               console.log('Incorrect id!');
               return false;
         }
         
-        this._newAds.splice(index, 1);
+        this._ads.splice(index, 1);
         return true;
     }
 
@@ -163,14 +163,16 @@ class AdList {
         var invalidAds = [];
 
         ads.forEach(adItem => {
-            if (!this.add(adItem)) invalidAds.push(adItem)
+            if (!this.add(adItem)) { 
+                invalidAds.push(adItem)
+            }
         });
 
         return invalidAds;
     }
 
     clear() {
-        this._newAds = [];
+        this._ads = [];
     }
 
 }
