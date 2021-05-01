@@ -2,9 +2,9 @@
 <html>
     
 <head>
+    <meta charset="UTF-8">
 	<title>hey, discount!</title>
 	<link href="resources/css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
     
 <header class="header">
@@ -12,8 +12,8 @@
         <div class="header-inner">
             <div class="logo">hey, discount!</div>
             <div>
-                <div class="user-name"></div>
-                <button class="header-button">sign out</button>
+                <div class="user-name">hey, guest!</div>
+                <button class="header-button">sign up</button>
             </div>
         </div>
     </div>
@@ -22,61 +22,105 @@
 <body>
     <div class="add-ad">
         <div class="add-ad-inner">
-            <button class="add-ad-button">add your ad</button>
-            <div class="ad-text">for other users to use!</div>
+            <button class="add-ad-button">add an ad</button>
+            <div class="ad-text">sign up to ad an add or use a discount!</div>
         </div>
     </div>
 
-    <div class="filter">
+    <div id="back2"></div>
+        <div id="window2">
+        <img class="closeSigningUp" src="resources/images/close.png" alt="">
+        <div class="form2">
+            <h2>authorization</h2>
+            <form id="formSigningUp">
+                <input type="text" placeholder="login" name="login" class="input">
+                <input type="password" placeholder="password" name="password" class="input">
+                <input type="radio" name="radio1"> user <input type="radio" name="radio2" class="radio"> vendor
+                <input type="submit" value="sign up!" name="sab" class="input button">
+            </form>
+        </div>
+    </div>
+
+    <div id="back1"></div>
+        <div id="window1">
+        <img class="closeAddAd" src="resources/images/close.png" alt="">
+        <div class="form1">
+            <h2>ad information</h2>
+            <form id="formNewAd">
+                <input type="text" placeholder="ad title" name="adTitle" class="input">
+                <input type="text" placeholder="short description" name="shortDescription" class="input">
+                <input type="text" placeholder="link" name="link" class="input">
+                <input type="text" placeholder="photoLink" name="photoLink" class="input">
+                <input type="text" placeholder="hashtags" name="formHashtags" class="input">
+                <input type="date" placeholder="validity period" name="validityPeriod" class="ad-calendar">
+                <input type="text" placeholder="discount amount" name="discountAmount" class="input">
+                <input type="submit" value="publish your ad!" name="sab" class="input button" id="publishAd">
+            </form>
+        </div>
+    </div>
+
+    <div id="back3"></div>
+        <div id="window3">
+        <img class="closeReview" src="resources/images/close.png" alt="">
+        <div class="form3">
+            <h2>your review</h2>
+            <form id="formLeavingReview">
+                <input type="text" placeholder="review text" name="reviewText" class="input">
+                <input type="number" placeholder="rating" name="ratingUser" class="input">
+                <input type="submit" value="leave a review!" name="sab" class="input button">
+            </form>
+        </div>
+    </div>
+
+    <form class="filter">
         <div class="date-filter">
             <div class="filter-title">date:</div>
             <div class="calendar-block">
                 <div>from</div>
-                <input type="date" class="calendar">
+                <input type="date" class="calendar" name="from">
             </div>
             <div class="calendar-block">
                 <div>to</div>
-                <input type="date" class="calendar">
+                <input type="date" class="calendar" name="to">
             </div>
         </div>
         <div class="hashtags-filter">
             <div class="filter-title">hashtags:</div>
             <div class="hashtags-blocks">
-                    <textarea class="hashtag-area" name="filterHashtags" placeholder="#hashtags"></textarea>
+                <input type="text" placeholder="hashtags" name="filterHashtags" class="hashtag-area">
             </div>
+            <input type="submit" value="find!" name="find" class="filter-button">
         </div>
         <div class="vendor-filter">
             <div class="filter-title">vendor:</div>
-            <select class="select-vendor-button" id="vendorSelect">
-                <option value="select a vendor">select</option>
-            </select>
+            <input type="text" placeholder="vendor" name="filterVendor" class="select-vendor">
         </div>
-    </div>
+    </form>
 
     <main class="main">  
-        <section class="ads">
+        <template id="template">
             <div class="ad-block">
                 <div class="ad">
                     <div class="title-buttons">
-                        <div class="ad-title"></div>
+                        <div class="ad-title" data-target="title"></div>
                         <button class="edit-button"><img src="resources/images/edit.png" width="30" height="30" alt="edit" class="edit"></button>
                         <button class="delete-button"><img src="resources/images/delete.png" width="30" height="30" alt="delete"  class="delete"></button>
                     </div>
                     <div class="ad-info">
                         <div class="pic-container">
-                            <img src="" width="200" height="200" class="photoLink">
+                            <img src="" width="200" height="200" class="photoLink" data-target="photoLink">
                         </div>
                         <div class="description-container">
-                            <p class="description"></p>
-                            <a class="more">more...</a>
+                            <p class="description" data-target="description"></p>
+                            <a class="more" data-target="link">more...</a>
                         </div>
                         <div class="discount-container">
-                            <div class="vendor"></div>
-                            <div class="discount-amount"></div>
-                            <div class="validUntil"></div>
+                            <div class="vendor" data-target="vendor"></div>
+                            <div class="discount-amount" data-target="discount"></div>
+                            <div class="validUntil" data-target="validUntil"></div>
                         </div>
                     </div>
-                    <div class="hashtags"></div>
+                    <div class="hashtags" data-target="hashTags"></div>
                 </div>
                 <div class="reviews">
                     <div>reviews:</div>
@@ -117,22 +161,18 @@
                     </div>
                     <div class="button-review">
                         <button class="leave-review">leave a review</button>
-                        <div>
-                            <span class="fa fa-star" id="1star"></span>
-                            <span class="fa fa-star" id="2star"></span>
-                            <span class="fa fa-star" id="3star"></span>
-                            <span class="fa fa-star" id="4star"></span>
-                            <span class="fa fa-star" id="5star"></span>
-                        </div>
+                        <div class="rating" data-target="rating"></div>
                     </div>
                 </div>
             </div>
-        </section>
-        <button class="load-more">load more</button>
+        </template>
+        <div class="ads" id="container"></div>
+        <button class="load-more" id="buttonMore">load more</button>
     </main>
 
     <script src="resources/js/Model.js"></script>
     <script src="resources/js/View.js"></script>
+    <script src="resources/js/script.js"></script>
 </body>
     
 <footer class="footer">
@@ -140,7 +180,7 @@
         <p>hey, discount!</p>
         <p>e-mail: <a href="mailto:petia2001@icloud.com" class="email-footer">petia2001@icloud.com</a></p>
     </div>
-    <p class="copyright">&#169 Petrovich Petr, 2 course 6 group, 19/04/2021</p>
+    <p class="copyright">&#169 Petrovich Petr, 2 course 6 group, 01/05/2021</p>
 </footer>
     
 </html>

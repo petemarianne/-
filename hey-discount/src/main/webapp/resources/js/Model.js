@@ -1,6 +1,4 @@
 class Model {
-    _ads = [];
-
     constructor(ads) {
         ads = ads || [];
         this._ads = ads.filter(adItem => this.validate(adItem));
@@ -10,7 +8,7 @@ class Model {
         return b.createdAt - a.createdAt;
     }
 
-    getPage(skip = 0, top = 10, filterConfig = undefined) {
+    getPage(skip = 0, top = 10, filterConfig) {
         var resultAds = this._ads;
 
         if (filterConfig) {
@@ -23,13 +21,13 @@ class Model {
 
             if (filterConfig.from) {
                 resultAds = resultAds.filter(function (adItem) {
-                    return adItem.createdAt >= filterConfig.from;
+                    return adItem.validUntil >= filterConfig.from;
                 });
             }
 
             if (filterConfig.to) {
                 resultAds = resultAds.filter(function (adItem) {
-                    return adItem.createdAt <= filterConfig.to;
+                    return adItem.validUntil <= filterConfig.to;
                 });
             }
 
@@ -54,6 +52,30 @@ class Model {
             return false;
         }
         return true;
+    }
+
+    validateReview(review) {
+        if (review) {
+            if (!review.reviewText || review.reviewText.length > 1000 || typeof review.reviewText !== 'string') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    addReview(review, id) {
+        const date = new Date(review.date);
+        const newReview = {
+            username: review.username,
+            date: date,
+            reviewText: review.reviewText
+        }
+        if (this.validateReview(review)) {
+            this.get(id).reviews.push(review);
+            this.save();
+            return this.get(id);
+        }
+        return false;
     }
 
     validate(adItem) {
@@ -108,13 +130,12 @@ class Model {
     add(adItem) {
         const createdDate = new Date(adItem.createdAt);
         const validDate = new Date(adItem.validUntil);
-        const ID = String(+createdDate);
         const newAd = {
             description: adItem.description,
             title: adItem.title,
             photoLink: adItem.photoLink,
             hashTags: adItem.hashTags,
-            id: ID,
+            id: (this.size() + 1).toString(),
             vendor: adItem.vendor,
             createdAt: createdDate,
             validUntil: validDate,
@@ -125,6 +146,7 @@ class Model {
         }
         if (this.validate(adItem)) {
             this._ads.push(adItem);
+            this.save();
             return newAd;
         }
         return false;
@@ -155,6 +177,7 @@ class Model {
             editingAd.link = adItem.link;
         }
         if (this.validate(editingAd)) {
+            this.save();
             return adItem;
         }
         return false;
@@ -163,9 +186,25 @@ class Model {
     remove(id) {
         if (this._ads.findIndex(adItem => adItem.id === id) !== -1) {
             this._ads.splice(this._ads.findIndex(adItem => adItem.id === id), 1);
+            this.save();
             return true;
         }
         return false;
+    }
+
+    save(){
+        localStorage.clear();
+        localStorage.setItem('ads', JSON.stringify(this._ads));
+    }
+
+    restore(){
+        var json = localStorage.getItem('ads');
+        if(json) {
+            var ads = JSON.parse(json);
+            this._ads = ads.map((adItem) => ({
+                ...adItem, validUntil: new Date(adItem.validUntil), createdAt: new Date(adItem.createdAt) // i don't know how to refer to date of review
+            }));
+        }
     }
 
     addAll(ads) {
@@ -180,6 +219,10 @@ class Model {
 
     clear() {
         this._ads = [];
+    }
+
+    size(){
+        return this._ads.length;
     }
 
 }
