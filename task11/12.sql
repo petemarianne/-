@@ -1,0 +1,1 @@
+SELECT user_id, count(*) FROM hey_discount.review WHERE date(review.created_at)='2021-05-09' group by user_id
