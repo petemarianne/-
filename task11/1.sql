@@ -1,0 +1,1 @@
+SELECT * FROM hey_discount.ad order by created_at DESC
