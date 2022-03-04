@@ -1,0 +1,1 @@
+SELECT * FROM hey_discount.ad WHERE user_id=4;

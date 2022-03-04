@@ -70,6 +70,7 @@ body, header, footer {
     border: none;
     border-radius: 42px;
   	padding: 15px 60px;
+    cursor: pointer;
 }
 
 /* Add Ad */
@@ -98,6 +99,21 @@ body, header, footer {
     border-radius: 42px;
     padding: 35px 60px;
     margin-top: 36px;
+    cursor: pointer;
+    display: none;
+}
+
+.sign-up-button { 
+    font-size: 40px;
+    font-weight: bold;
+    color: #9fb1fe;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #9fb1fe;
+    border-radius: 42px;
+    padding: 35px 60px;
+    margin-top: 36px;
+    cursor: pointer; 
 }
 
 .ad-text {
@@ -106,6 +122,168 @@ body, header, footer {
     color: white;
     margin-top: 65px;
     margin-right: 140px;
+}
+
+/* Add an ad*/
+#window1{
+    width: 500px; 
+    height: 450px; 
+    margin: 250px auto; 
+    background: white; 
+    border: 3px solid #9fb1fe; 
+    border-radius: 15px; 
+    z-index: 150; 
+    display: none;
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+}
+
+.form1 {
+    width: 275px; 
+    margin: -15px auto 20px auto; 
+    text-align: center;
+}
+
+.input{
+    width: 260px; 
+    padding: 5px; 
+    margin-bottom: 10px; 
+    border: 2px solid #9fb1fe; 
+    border-radius: 42px; 
+    text-align: #9fb1fe;
+}
+
+.input.button{
+    width: 150px; 
+    background-color: #9fb1fe; 
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.ad-calendar{
+    width: 260px; 
+    padding: 5px; 
+    margin-bottom: 10px; 
+    border: 2px solid #9fb1fe; 
+    border-radius: 42px;
+}
+
+.closeAddAd{
+    margin: 10px 0px 0px 450px; 
+    cursor: pointer; 
+    border: 1px solid #9fb1fe; 
+    padding: 2px; 
+    background: #9fb1fe; 
+    border-radius: 2px;
+}
+
+h2{
+    color: #9fb1fe;
+}
+
+#back1{
+    background-color: #7e93f391; 
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+    display: none;
+    z-index: 100;
+}
+
+/*Sign Up*/
+#window2{
+    width: 500px; 
+    height: 250px; 
+    margin: 250px auto; 
+    background: white; 
+    border: 3px solid #9fb1fe; 
+    border-radius: 15px; 
+    z-index: 150; 
+    display: none;
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+}
+
+.form2 {
+    width: 275px; 
+    margin: -15px auto 20px auto; 
+    text-align: center;
+}
+
+#back2{
+    background-color: #7e93f391; 
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+    display: none;
+    z-index: 100;
+}
+
+.closeSigningUp{
+    margin: 10px 0px 0px 450px; 
+    cursor: pointer; 
+    border: 1px solid #9fb1fe; 
+    padding: 2px; 
+    background: #9fb1fe; 
+    border-radius: 2px;
+}
+
+.radio {
+    margin-bottom: 10px;
+}
+
+/*Review*/
+#window3{
+    width: 500px; 
+    height: 250px; 
+    margin: 250px auto; 
+    background: white; 
+    border: 3px solid #9fb1fe; 
+    border-radius: 15px; 
+    z-index: 150; 
+    display: none;
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+}
+
+.form3 {
+    width: 275px; 
+    margin: -15px auto 20px auto; 
+    text-align: center;
+}
+
+#back3{
+    background-color: #7e93f391; 
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+    display: none;
+    z-index: 100;
+}
+
+.closeReview{
+    margin: 10px 0px 0px 450px; 
+    cursor: pointer; 
+    border: 1px solid #9fb1fe; 
+    padding: 2px; 
+    background: #9fb1fe; 
+    border-radius: 2px;
 }
 
 /* Filter */
@@ -163,44 +341,54 @@ body, header, footer {
     font-weight: normal;
 }
 
-.select-vendor-button {
-    padding: 25px 80px;
-    color: #e1e6ff;
-    font-size: 20px;
+.select-vendor {
+    background-color: white;
+    resize: none;
     border: 1px solid #9fb1fe;
-    margin-left: 70px;
-    margin-top: 10px;
+    width: 400px;
+    height: 50px;
 }
 
 .hashtags-blocks {
     display: flex;
-    justify-content: space-between;
-    margin: 0 30px;
-    color: #9fb1fe;
-    font-size: 30px;
-    line-height: 1.5;
+    justify-content: center;
 }
 
-.hashtag {
-    list-style-type: circle;
+.hashtag-area {
+    background-color: white;
+    resize: none;
+    border: 1px solid #9fb1fe;
+    width: 400px;
+    height: 50px;
+}
+
+.filter-button {
+    margin-left: 330px;
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: #9fb1fe;
+    border: none;
+    border-radius: 42px;
+  	padding: 15px 60px;
+    cursor: pointer;
+
 }
 
 /* Main */
-.row {
+.ad-block {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
+    border-bottom: 2px solid #9fb1fe;
 }
 
-.left-ad {
+.ad {
     display: block;
-    width: 50%;
+    width: 70%;
     border-right: 2px solid #9fb1fe;
-}
-
-.right-ad {
-    display: block;
-    width: 50%;
 }
 
 .ad-title {
@@ -234,6 +422,21 @@ body, header, footer {
     margin-right: 40px;
 }
 
+.edit-button {
+    width: 50px;
+    height: 50px;
+    border: white;
+    background-color: white;
+    cursor: pointer;
+}
+.delete-button {
+    width: 50px;
+    height: 50px;
+    border: white;
+    background-color: white;
+    cursor: pointer;
+}
+
 .description-container {
     display: block;
     height: 80px;
@@ -258,14 +461,14 @@ body, header, footer {
     margin-right: 20px;
 }
 
-.discount {
+.discount-amount {
     font-size: 100px;
     color: #c67cff;
     margin: 10px;
 }
 
 .hashtags {
-    margin-top: 20px;
+    margin-top: 60px;
     margin-left: 20px;
     margin-bottom: 10px;
     font-weight: bold;
@@ -275,46 +478,70 @@ body, header, footer {
 
 .reviews {
     display: block;
-    border-top: 2px solid #9fb1fe;
-    border-bottom: 2px solid #9fb1fe;
     text-align: center;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 36px;
     color: #7c95ff;
-    height: 500px;
+    height: 400px;
+    width: 430px;
 }
 
-.review {
+.review-1 {
     display: block;
-    height: 75px;
-    border-top: 2px solid #9fb1fe;
-    color: #9fb1fe;
+    height: 60px;
     font-size: 23px;
     font-family: Helvetica;
     text-align: left; 
+    border-top: 1px solid #9fb1fe;
 }
 
-.review.no-review {
-    border-top: none;
-    text-align: center; 
-    font-size: 100%;
+.review-2 {
+    display: block;
+    height: 60px;
+    font-size: 23px;
+    font-family: Helvetica;
+    text-align: left; 
+    border-top: 1px solid #9fb1fe;
+}
+
+.review-3 {
+    display: block;
+    height: 60px;
+    font-size: 23px;
+    font-family: Helvetica;
+    text-align: left; 
+    border-top: 1px solid #9fb1fe;
+}
+
+.review-4 {
+    display: block;
+    height: 60px;
+    font-size: 23px;
+    font-family: Helvetica;
+    text-align: left; 
+    border-top: 1px solid #9fb1fe;
+}
+
+.review-5 {
+    display: block;
+    height: 60px;
+    font-size: 23px;
+    font-family: Helvetica;
+    text-align: left; 
+    border-top: 1px solid #9fb1fe;
 }
 
 .username-date {
     display: flex;
     justify-content: space-between;
-    margin: 0 20px;
-    color: #687bff;
+    color: #9fb1fe;
     font-size: 18px;
-    font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 10px;
 }
 
 .button-review {
     display: flex;
     justify-content: space-between;
-    margin: 0 20px;
+    margin: 0 50px;
 }
 
 .leave-review {
@@ -325,8 +552,8 @@ body, header, footer {
     background-color: #9fb1fe;
     border: none;
     border-radius: 42px;
-  	padding: 15px 20px;
-    
+  	padding: 5px 20px;
+    cursor: pointer;
 }
 
 .checked {
@@ -343,6 +570,7 @@ body, header, footer {
     border-radius: 42px;
   	padding: 35px 60px;
     margin: 15px 700px;
+    cursor: pointer; 
 }
 
 /* Footer */
